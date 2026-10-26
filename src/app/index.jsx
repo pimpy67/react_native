@@ -45,6 +45,7 @@ const YourApp = () => {
 
 const carica = async () => {
   try {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     const risposta = await fetch("https://pokeapi.co/api/v2/pokemon/1");
     const dati = await risposta.json();
     setPokemon(dati);
